@@ -1,0 +1,62 @@
+/* Homepage shell and section rhythm. Stateful Dashboard widgets are independent. */
+body:has(.st-key-hb_home) [data-testid="stHeader"] { display:none; }
+[data-testid="stAppViewContainer"]:has(.st-key-hb_home) { background:linear-gradient(180deg,#fff 0%,#f8fcfa 58%,#fbfdfb 100%); }
+[data-testid="stMainBlockContainer"]:has(.st-key-hb_home) { max-width:1240px; padding:0 2.5rem; }
+[data-testid="stMain"]:has(.st-key-hb_home) { scroll-behavior:smooth; }
+.st-key-hb_home { --hb-home-ink:#263f49; --hb-home-muted:#62777c; --hb-home-accent:#287d70; color:var(--hb-home-ink); font-family:"Source Sans 3","Source Sans Pro",sans-serif; gap:0; background:radial-gradient(ellipse 70% 19% at 0% 12%,#e5f5eb80,transparent 76%),radial-gradient(ellipse 68% 22% at 100% 28%,#e4f4f380,transparent 76%); }
+
+/* Real section links; browser anchors scroll without a Python rerun. */
+.st-key-hb_home_nav { padding:1.25rem 0; border-bottom:1px solid #dfe9e3; }
+.st-key-hb_home_nav [data-testid="stHorizontalBlock"] { align-items:center; gap:1.6rem; flex-wrap:nowrap; }
+.st-key-hb_home_nav [data-testid="stColumn"] { min-width:0; width:auto; }
+.st-key-hb_home_nav [data-testid="stColumn"]:first-child { flex:1 1 auto; }
+.st-key-hb_home_nav [data-testid="stColumn"]:not(:first-child) { flex:0 0 auto; }
+.hb-home-nav-link { display:inline-flex; align-items:center; min-height:44px; padding:.5rem .2rem; border-radius:6px; color:#496269; font-size:.95rem; font-weight:500; text-decoration:none; transition:color 160ms ease-out; }
+.hb-home-nav-link:hover { color:#226d62; text-decoration:none; }
+.hb-home-start { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.6rem 1.25rem; border:1px solid #287d70; border-radius:9px; color:#fff; background:#287d70; font-size:.95rem; font-weight:600; line-height:1.4; text-decoration:none; transition:background-color 160ms ease-out,border-color 160ms ease-out; }
+.hb-home-start:hover { color:#fff; background:#216c61; border-color:#216c61; text-decoration:none; }
+.st-key-hb_home a:focus-visible { outline:2px solid #287d70; outline-offset:4px; }
+.hb-scroll-target { height:0; scroll-margin-top:1.25rem; outline:none; }
+
+/* Two restrained botanical edge motifs, with a clear text surface. */
+.st-key-hb_home_hero { position:relative; isolation:isolate; overflow:clip; align-items:center; text-align:center; padding:3rem 0 1.75rem; gap:1.25rem; background:radial-gradient(ellipse 70% 100% at 50% 42%,#fff 0%,#ffffffeb 49%,transparent 90%),radial-gradient(ellipse 410px 310px at 3% 75%,#dff2e79c,transparent 82%),radial-gradient(ellipse 400px 320px at 98% 35%,#e0f2f29c,transparent 82%); }
+.st-key-hb_home_hero::before,.st-key-hb_home_hero::after { content:""; position:absolute; z-index:-1; pointer-events:none; width:clamp(150px,22vw,270px); height:clamp(240px,34vw,400px); background:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20330%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22l%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%238cc7b5%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23beedc7%22%20stop-opacity%3D%22.45%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M107%20328Q38%20225%2084%2070%22%20fill%3D%22none%22%20stroke%3D%22%238cc7b5%22%20stroke-opacity%3D%22.35%22%20stroke-width%3D%222%22%2F%3E%3Cg%20fill%3D%22url%28%23l%29%22%3E%3Cpath%20d%3D%22M65%20251C8%20239%204%20193%2015%20160C61%20166%2083%20202%2065%20251Z%22%2F%3E%3Cpath%20d%3D%22M65%20232C116%20223%20153%20183%20149%20143C105%20149%2071%20184%2065%20232Z%22%2F%3E%3Cpath%20d%3D%22M67%20175C22%20156%2021%20117%2034%2089C72%20101%2085%20136%2067%20175Z%22%2F%3E%3Cpath%20d%3D%22M77%20127C117%20108%20139%2071%20128%2040C93%2055%2077%2088%2077%20127Z%22%2F%3E%3Cpath%20d%3D%22M85%2085C59%2064%2058%2028%2075%207C98%2029%20101%2059%2085%2085Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') center/contain no-repeat; opacity:.22; mask-image:radial-gradient(ellipse at 50% 50%,#000 48%,#000c 76%,transparent 100%); }
+.st-key-hb_home_hero::before { left:-3%; bottom:-3%; transform:rotate(-22deg); }
+.st-key-hb_home_hero::after { right:-3%; top:0; transform:scaleX(-1) rotate(-16deg); opacity:.19; }
+.st-key-hb_home_hero > [data-testid="stElementContainer"] { width:100%; }
+.hb-home-intro { margin-bottom:1.5rem; }
+.hb-home-product { margin:0 0 .55rem; font-size:.9rem; font-weight:600; color:#287d70; letter-spacing:.09em; }
+.hb-home-tagline { margin:0; color:#62777c; font-size:1.1rem; line-height:1.5; font-weight:400; }
+.hb-home-headline { max-width:1040px; margin:0 auto 1.25rem; padding:0; font-size:clamp(2rem,4.2vw,3.4rem); line-height:1.2; letter-spacing:-.035em; font-weight:600; color:#263f49; text-wrap:balance; }
+.hb-home-headline-first { color:#263f49; }
+.hb-home-emphasis { color:#287d70; }
+.hb-home-description { max-width:700px; margin:0 auto; color:#62777c; font-size:1.02rem; line-height:1.65; font-weight:400; text-wrap:balance; }
+.st-key-hb_home_cta { align-items:center; width:100%; }
+.st-key-hb_home_cta > [data-testid="stElementContainer"] { width:auto; }
+.st-key-hb_home_cta .hb-home-start { min-width:156px; min-height:48px; }
+
+@media (max-width:1050px) {
+  [data-testid="stMainBlockContainer"]:has(.st-key-hb_home) { padding:0 2rem; }
+  .st-key-hb_home_hero { padding-top:2.75rem; }
+}
+@media (max-width:640px) {
+  [data-testid="stMainBlockContainer"]:has(.st-key-hb_home) { padding:0 1.1rem; }
+  .st-key-hb_home_nav { padding:1rem 0; }
+  .st-key-hb_home_nav [data-testid="stHorizontalBlock"] { gap:.65rem; }
+  .hb-home-nav-link { font-size:.8rem; }
+  .st-key-hb_home_nav .hb-home-start { min-height:41px; padding:.45rem .7rem; border-radius:8px; font-size:.8rem; white-space:nowrap; }
+  .st-key-hb_home_hero { padding:2.5rem 0 1.6rem; }
+  .hb-home-intro { margin-bottom:1.25rem; }
+  .hb-home-tagline { font-size:.95rem; max-width:280px; margin:0 auto; }
+  .hb-home-headline { font-size:clamp(1.9rem,7.6vw,2.4rem); line-height:1.22; margin-bottom:1.3rem; }
+  .hb-home-description { font-size:1rem; line-height:1.7; max-width:335px; }
+  .st-key-hb_home_hero::before,.st-key-hb_home_hero::after { opacity:.13; }
+}
+@media (max-width:380px) {
+  .st-key-hb_home_nav [data-testid="stHorizontalBlock"] { gap:.5rem; }
+  .st-key-hb_home_nav .hb-home-start { padding-inline:.55rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  [data-testid="stMain"]:has(.st-key-hb_home) { scroll-behavior:auto; }
+  .hb-home-start,.hb-home-nav-link { transition:none; }
+}

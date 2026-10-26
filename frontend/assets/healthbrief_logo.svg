@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" role="img" aria-labelledby="hb-logo-title">
+  <title id="hb-logo-title">HealthBrief — a report within the letter B</title>
+  <defs>
+    <linearGradient id="hb-logo-spine" x1="15" y1="6" x2="15" y2="74" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#82C8C1"/>
+      <stop offset="1" stop-color="#16A79A"/>
+    </linearGradient>
+    <linearGradient id="hb-logo-body" x1="50" y1="6" x2="63" y2="74" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8CCBC2"/>
+      <stop offset=".52" stop-color="#64BBB0"/>
+      <stop offset="1" stop-color="#B8E3CA"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 6C13 6 6 15 6 27v26c0 12 7 21 18 21V6Z" fill="url(#hb-logo-spine)"/>
+  <path d="M34 6h19c22 0 27 22 11 33 19 13 14 35-9 35H29c3-12 10-18 21-18 9 0 14-6 14-15v-5c0-9-6-14-15-14h-5c-9 0-7-10-10-16Z" fill="url(#hb-logo-body)"/>
+  <path d="M64 39c-2 4-5 7-8 10 6 9 4 19-1 25 23 0 28-22 9-35Z" fill="#B8E3CA" fill-opacity=".55"/>
+  <path d="M33 32h20M33 41h20M33 50h12" stroke="#75C6BF" stroke-width="4" stroke-linecap="round"/>
+</svg>

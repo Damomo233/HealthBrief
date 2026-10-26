@@ -1,0 +1,32 @@
+# Native widgets and the canvas dataframe must share the light product palette.
+# CSS around st.dataframe cannot recolor the canvas renderer.
+[theme]
+base = "light"
+primaryColor = "#287D70"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5FAF8"
+textColor = "#223B4A"
+linkColor = "#287D70"
+codeTextColor = "#223B4A"
+codeBackgroundColor = "#F5FAF8"
+borderColor = "#D7E5E1"
+dataframeBorderColor = "#D7E5E1"
+dataframeHeaderBackgroundColor = "#F0F6F3"
+dataframeHeaderTextColor = "#223B4A"
+showWidgetBorder = true
+
+# Keep the same readable palette when a browser remembers the Dark variant.
+# This uses supported Streamlit theme variants, not browser-storage mutation.
+[theme.dark]
+primaryColor = "#287D70"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5FAF8"
+textColor = "#223B4A"
+linkColor = "#287D70"
+codeTextColor = "#223B4A"
+codeBackgroundColor = "#F5FAF8"
+borderColor = "#D7E5E1"
+dataframeBorderColor = "#D7E5E1"
+dataframeHeaderBackgroundColor = "#F0F6F3"
+dataframeHeaderTextColor = "#223B4A"
+showWidgetBorder = true

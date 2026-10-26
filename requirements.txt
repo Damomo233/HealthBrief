@@ -1,0 +1,9 @@
+streamlit
+pandas
+pypdf
+openai
+python-dotenv
+pydantic
+langgraph
+python-multipart
+sqlalchemy

@@ -1,0 +1,26 @@
+# Virtual environments
+healthbrief_env/
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local database
+healthbrief.db
+*.db
+
+# IDE / OS
+.vscode/
+.DS_Store
+Thumbs.db

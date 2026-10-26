@@ -1,0 +1,16 @@
+/* One brand treatment for Homepage and Dashboard. */
+.hb-brand { display:flex; align-items:center; gap:.65rem; color:#263f49; font-family:"Source Sans 3","Source Sans Pro",sans-serif; }
+.hb-brand img { display:block; width:40px; height:40px; flex:0 0 auto; }
+.hb-brand .hb-brand-wordmark { margin:0; padding:0; color:#263f49; font-size:1.55rem; font-weight:650; line-height:1.2; letter-spacing:-.035em; white-space:nowrap; }
+.hb-brand-wordmark span { color:#287d70; }
+.hb-brand .hb-brand-subtitle { margin:.2rem 0 0; color:#62777c; font-size:.73rem; font-weight:400; line-height:1.4; letter-spacing:0; }
+@media (max-width:640px) {
+  .hb-brand { gap:.4rem; }
+  .hb-brand img { width:32px; height:32px; }
+  .hb-brand .hb-brand-wordmark { font-size:1.15rem; }
+  .hb-brand .hb-brand-subtitle { font-size:.65rem; max-width:190px; }
+}
+@media (max-width:380px) {
+  .hb-brand .hb-brand-wordmark { font-size:1.08rem; }
+  .hb-brand img { width:30px; height:30px; }
+}

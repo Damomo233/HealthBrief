@@ -1,0 +1,101 @@
+[
+  {
+    "question": "Why is my LDL high?",
+    "expected_category": "EXPLAIN_LAB"
+  },
+
+  {
+    "question": "What does HbA1c mean?",
+    "expected_category": "EXPLAIN_LAB"
+  },
+
+  {
+    "question": "Explain my HDL result.",
+    "expected_category": "EXPLAIN_LAB"
+  },
+
+  {
+    "question": "Why is my ALT elevated?",
+    "expected_category": "EXPLAIN_LAB"
+  },
+
+  {
+    "question": "Which results are abnormal?",
+    "expected_category": "ABNORMAL_SUMMARY"
+  },
+
+  {
+    "question": "Which numbers should I pay attention to?",
+    "expected_category": "ABNORMAL_SUMMARY"
+  },
+
+  {
+    "question": "Are any of my results outside the reference range?",
+    "expected_category": "ABNORMAL_SUMMARY"
+  },
+
+  {
+    "question": "What should I ask my doctor?",
+    "expected_category": "VISIT_PREP"
+  },
+
+  {
+    "question": "Help me prepare for my doctor appointment.",
+    "expected_category": "VISIT_PREP"
+  },
+
+  {
+    "question": "What questions should I bring to my appointment?",
+    "expected_category": "VISIT_PREP"
+  },
+
+  {
+    "question": "Has my LDL improved?",
+    "expected_category": "COMPARE_TREND"
+  },
+
+  {
+    "question": "Did my HbA1c increase since last time?",
+    "expected_category": "COMPARE_TREND"
+  },
+
+  {
+    "question": "How has my ALT changed?",
+    "expected_category": "COMPARE_TREND"
+  },
+
+  {
+    "question": "Compare my current glucose with my previous report.",
+    "expected_category": "COMPARE_TREND"
+  },
+
+  {
+    "question": "Hello",
+    "expected_category": "GENERAL"
+  },
+
+  {
+    "question": "What can HealthBrief do?",
+    "expected_category": "GENERAL"
+  },
+
+  {
+    "question": "Thanks",
+    "expected_category": "GENERAL"
+  },
+
+  {
+    "question": "What should I do?",
+    "expected_category": "GENERAL"
+  },
+
+  {
+    "question": "Give me some healthy lifestyle advice based on my previous and current records",
+    "expected_category": "GENERAL"
+  },
+
+  {
+    "question": "I stay up late these days. Is it related to LDL level changes?",
+    "expected_category": "EXPLAIN_LAB"
+  }
+]

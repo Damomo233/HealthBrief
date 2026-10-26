@@ -1,0 +1,199 @@
+/* Dashboard only. Ancestor selectors stop applying as soon as Home is shown. */
+[data-testid="stAppViewContainer"]:has(.st-key-hb_dashboard) {
+  background: #fbfcfc;
+}
+/* Hide Streamlit chrome only while Dashboard is mounted. */
+body:has(.st-key-hb_dashboard) :is(
+  [data-testid="stHeader"],
+  [data-testid="stToolbar"],
+  [data-testid="stDecoration"],
+  [data-testid="stAppDeployButton"],
+  #MainMenu
+) { display: none; }
+[data-testid="stMainBlockContainer"]:has(.st-key-hb_dashboard) {
+  max-width: 1280px;
+  padding: 0 2rem 2.5rem;
+}
+.st-key-hb_dashboard {
+  --hb-text: #223b4a;
+  --hb-muted: #536b78;
+  --hb-teal: #287d70;
+  --hb-border: #dce7e6;
+  color: var(--hb-text);
+  color-scheme: light;
+  gap: 1.9rem;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+}
+.st-key-hb_dashboard :is(h1, h2, h3, h4) { color: inherit; }
+.st-key-hb_dashboard :is(h1, h2, h3, h4) { letter-spacing: -0.025em; }
+.st-key-hb_dashboard h3 { font-size: 1.25rem; font-weight: 650; padding: 0; line-height: 1.4; }
+.st-key-hb_dashboard h4 { font-size: 1rem; font-weight: 600; padding: .2rem 0 .35rem; }
+.st-key-hb_dashboard [data-testid="stCaptionContainer"] { color: var(--hb-muted); opacity: 1; }
+.st-key-hb_dashboard [data-testid="stCaptionContainer"] p { font-size: .875rem; line-height: 1.5; }
+.st-key-hb_header { gap: .25rem; padding-bottom: .25rem; }
+.st-key-hb_current {
+  border: 1px solid var(--hb-border);
+  border-radius: 12px;
+  background: #fff;
+  padding: 1.25rem 1.4rem;
+  gap: .8rem;
+}
+/* Keep the results table and its summary in the same visual row. */
+.st-key-hb_overview { gap: 1.1rem; padding: 0 .15rem; }
+/* Native Markdown headings subtract a widget gap; keep real breathing room here. */
+.st-key-hb_overview [data-testid="stMarkdownContainer"]:has(> [data-testid="stHeadingWithActionElements"]) { margin-bottom:0; }
+.st-key-hb_biomarkers { gap: .8rem; }
+.st-key-hb_biomarkers h4 { padding: .15rem 0 .35rem; }
+.st-key-hb_summary {
+  background: #f2f7f5;
+  border: 1px solid #dce7e2;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  gap: .85rem;
+}
+.st-key-hb_summary h4 { padding: 0; font-size: .95rem; }
+.st-key-hb_summary_counts { gap: .25rem; }
+.st-key-hb_summary_counts [data-testid="stHorizontalBlock"] { flex-wrap: nowrap; gap: .7rem; }
+.st-key-hb_summary_counts [data-testid="stColumn"] { min-width: 0; flex: 1 1 0; }
+.st-key-hb_summary_counts [data-testid="stMetric"] { padding: 0; background: transparent; border: 0; border-radius: 0; }
+.st-key-hb_summary_counts [data-testid="stMetricLabel"] { min-height: 2.5rem; align-items: flex-start; }
+.st-key-hb_summary_counts [data-testid="stMetricLabel"] p { font-size: .8rem; line-height: 1.25; white-space: normal; }
+.st-key-hb_summary_counts [data-testid="stMetricValue"] > div { font-size: 1.65rem; font-weight: 600; line-height: 1.2; color: #2c4b55; }
+.st-key-hb_summary .st-key-hb_date { padding-top: .8rem; border-top: 1px solid #dce7e2; }
+.st-key-hb_summary .st-key-hb_date [data-testid="stCaptionContainer"]:last-child p { color: #35535c; font-size: .875rem; }
+.st-key-hb_overview > [data-testid="stLayoutWrapper"]:has([data-testid="stExpander"]) { margin-top: .1rem; }
+
+.st-key-hb_previous { border: 1px solid var(--hb-border); border-radius: 12px; background: #fff; padding: 1.2rem 1.4rem; gap: .8rem; }
+/* A single typographic row gives the heading and badge a shared baseline. */
+.st-key-hb_previous_heading { gap:0; }
+.hb-previous-title { display:flex; align-items:baseline; gap:.65rem; }
+.hb-previous-title h3 { margin:0; padding:0; }
+.hb-optional { display:inline-block; padding:.12rem .45rem; border-radius:5px; background:#edf5f0; color:#536f62; font-size:.75rem; font-weight:400; line-height:1.4; }
+.st-key-hb_ask { border: 1px solid var(--hb-border); border-radius: 12px; background: #f1f7f5; padding: 1.35rem 1.4rem; gap: .85rem; }
+.st-key-hb_dashboard [data-testid="stWidgetLabel"] { color:var(--hb-text); }
+.st-key-hb_dashboard [data-testid="stWidgetLabel"] p { color:inherit; font-size:.875rem; font-weight:500; }
+.st-key-hb_dashboard button { border-radius: 9px; min-height: 2.45rem; font-weight: 600; transition: background-color 140ms ease, border-color 140ms ease; box-shadow: none; }
+.st-key-hb_dashboard button :is(p, span, [data-testid="stMarkdownContainer"]) { color:inherit; }
+.st-key-hb_dashboard button p { font-size:.875rem; }
+.st-key-hb_dashboard button[kind="secondary"] { background: #fff; border-color: #cddbd9; color: #35595e; }
+.st-key-hb_dashboard button[kind="secondary"]:hover:not(:disabled) { background: #f0f8f6; border-color: #8cc7b5; color: #216b60; }
+.st-key-hb_dashboard button[kind="primary"] { background: var(--hb-teal); border-color: var(--hb-teal); color: #fff; }
+.st-key-hb_dashboard button[kind="primary"]:hover:not(:disabled) { background: #216b60; border-color: #216b60; }
+.st-key-hb_dashboard button:focus-visible { outline: 2px solid #287d70; outline-offset: 3px; }
+.st-key-hb_dashboard button[kind="primary"]:focus:not(:active) { border-color: #287d70; color: #fff; box-shadow: none; }
+.st-key-hb_dashboard button:disabled { color: #536b78; background: #edf1f0; border-color: #e0e6e4; opacity: 1; }
+.st-key-hb_dashboard [data-testid="stFileUploaderDropzone"] { background: #f8fbfa; border: 1px dashed #b9d6ce; border-radius: 10px; padding: .85rem 1rem; min-height: 86px; }
+.st-key-hb_dashboard [data-testid="stFileUploaderDropzone"] small { color: var(--hb-muted); }
+.st-key-hb_dashboard [data-testid="stFileUploaderDropzoneInstructions"] :is(span, small) { color:var(--hb-muted); }
+/* Streamlit 1.65 selected-file chip, including the icon and size. */
+.st-key-hb_dashboard [data-testid="stFileChip"] { background:#f1f7f4; border:1px solid #d7e5e1; color:#223b4a; }
+.st-key-hb_dashboard [data-testid="stFileChipName"] { color:#223b4a; }
+.st-key-hb_dashboard [data-testid="stFileChipName"] + div { color:var(--hb-muted); }
+.st-key-hb_dashboard [data-testid="stFileChip"] > div:first-child { background:#e4f2ed; color:#287d70; border:1px solid #d3e7dc; }
+.st-key-hb_dashboard [data-testid="stFileChipDeleteBtn"] button { background:transparent; color:#557568; }
+.st-key-hb_dashboard [data-testid="stFileChipDeleteBtn"] button:hover { background:#e4f0e9; color:#285d4c; }
+.st-key-hb_dashboard [data-testid="stFileUploaderDropzone"] button[kind="borderlessIcon"] { background:transparent; color:#557568; }
+
+.st-key-hb_dashboard [data-testid="stFileUploaderDropzone"] button { min-height: 2rem; }
+/* Hide only the additive affordance. The native Remove button stays operable. */
+.st-key-hb_dashboard .st-key-current_report_uploader button[aria-label="Add files"] { display: none; }
+.st-key-hb_dashboard [data-testid="stFileUploaderDropzone"] button[aria-label^="Remove "] { display: inline-flex; color: #60757d; }
+/* Requested presentation only: hide Previous's native remove affordance.
+   Filename, size, upload callback and retained-file controls are unchanged. */
+.st-key-hb_dashboard .st-key-previous_report_uploader button[aria-label^="Remove "] { display:none; }
+.st-key-hb_dashboard [data-testid="stFileUploaderDropzone"]:has(button[aria-label^="Remove "]) { min-height: 60px; border-style: solid; }
+.st-key-hb_dashboard [class*="_remove_retained"] button { min-height: 1.8rem; font-size: .8rem; padding: .15rem .6rem; }
+.st-key-hb_dashboard [data-testid="stAlert"] { padding: 0; border-radius: 8px; border: 0; background: transparent; }
+.st-key-hb_dashboard [data-testid="stAlert"] p { font-size: .875rem; line-height: 1.45; }
+.st-key-hb_dashboard [data-testid="stAlertContainer"] { gap: .5rem; }
+.st-key-hb_dashboard [data-testid="stAlertContainer"]:has([data-testid="stAlertContentInfo"], [data-testid="stAlertContentSuccess"]) { padding: 0; background: transparent; }
+.st-key-hb_dashboard [data-testid="stAlertContentSuccess"] { background: transparent; color: #496d60; padding: .15rem 0; border-radius: 8px; }
+.st-key-hb_dashboard [data-testid="stAlertContentInfo"] { background: transparent; color: #526d78; padding: .15rem 0; border-radius: 8px; }
+.st-key-hb_dashboard [data-testid="stAlertContentSuccess"] p { color: #496d60; }
+.st-key-hb_dashboard [data-testid="stAlertContentInfo"] p { color: #526d78; }
+.st-key-hb_dashboard [data-testid="stExpander"] { background: #fff; border: 1px solid #e1e8e7; border-radius: 9px; }
+.st-key-hb_dashboard [data-testid="stExpander"] details { background:#fff; color:var(--hb-text); }
+.st-key-hb_dashboard [data-testid="stExpander"] summary { padding:.55rem .75rem; background:#f5faf8; color:var(--hb-text); }
+.st-key-hb_dashboard [data-testid="stExpander"] details[open] > summary { border-bottom:1px solid #e1e8e7; }
+.st-key-hb_dashboard [data-testid="stExpanderDetails"] { background:#fff; color:var(--hb-text); }
+.st-key-hb_dashboard [data-testid="stExpander"] summary [data-testid="stIconMaterial"] { color:#4c7064; }
+.st-key-hb_dashboard [data-testid="stText"] { color:var(--hb-text); }
+.st-key-hb_dashboard [data-testid="stText"] :is(span, pre, code) { color:var(--hb-text); background:transparent; line-height:1.6; }
+.st-key-hb_dashboard [data-testid="stExpanderDetails"] :is(pre, code) { color:var(--hb-text); background:#f8fcfb; }
+
+.st-key-hb_dashboard [data-testid="stExpander"] summary p { font-size:.85rem; color:#35555f; }
+.st-key-hb_dashboard [data-testid="stDataFrame"] { border-radius: 9px; overflow: hidden; border: 1px solid #e1e8e5; }
+.st-key-hb_dashboard [data-testid="stMetricLabel"] p { font-size: .8rem; color:var(--hb-muted); }
+.st-key-hb_dashboard .st-key-previous_source [role="radiogroup"] { gap: 1.2rem; }
+.st-key-hb_dashboard .st-key-previous_source [data-testid="stRadioOption"] { color:#223b4a; background:transparent; }
+.st-key-hb_dashboard .st-key-previous_source [data-testid="stRadioOption"] [data-testid="stMarkdownContainer"] { color:inherit; }
+.st-key-hb_dashboard .st-key-previous_source [data-testid="stRadioOption"][data-selected="true"] { color:#287d70; background:transparent; }
+.st-key-hb_dashboard .st-key-previous_source [data-testid="stRadioOption"]:not([data-selected="true"]) > div > div:first-child { background:#fff; border-color:#a7bbb3; }
+.st-key-hb_dashboard .st-key-previous_source [data-testid="stRadioOption"][data-selected="true"] > div > div:first-child > div { background:#fff; }
+
+.st-key-hb_dashboard .st-key-previous_source [data-testid="stRadioOption"][data-selected="true"] > div > div:first-child { background-color: #287d70; border-color: #287d70; }
+.st-key-hb_date { gap: .1rem; }
+.st-key-hb_dashboard [data-testid="stTextInputRootElement"] { background: #fff; border-color: #cddbd9; border-radius: 9px; }
+.st-key-hb_dashboard [data-testid="stTextInputRootElement"]:focus-within { border-color: #287d70; box-shadow: 0 0 0 2px #287d7014; }
+.st-key-hb_dashboard [data-testid="stTextInputRootElement"] input { color:#223b4a; -webkit-text-fill-color:#223b4a; caret-color:#287d70; background:#fff; }
+.st-key-hb_dashboard [data-testid="stTextInputRootElement"] input::placeholder { color:#536b78; -webkit-text-fill-color:#536b78; opacity:1; }
+.st-key-hb_dashboard [data-testid="stTextInputRootElement"]:has(input:disabled),
+.st-key-hb_dashboard [data-testid="stTextInputRootElement"] input:disabled { color:#536b78; -webkit-text-fill-color:#536b78; background:#f4f8f6; opacity:1; }
+
+/* Native input and action share a row; no custom widget state. */
+.st-key-hb_composer { gap: .5rem; }
+.st-key-hb_composer [data-testid="stTextInputRootElement"] { min-height: 2.9rem; }
+.st-key-hb_composer input { padding: .65rem .85rem; font-size: .95rem; }
+.st-key-hb_composer .st-key-ask_healthbrief button { min-height: 2.9rem; }
+.st-key-hb_dashboard [data-testid="stCaptionContainer"] { overflow-wrap: anywhere; }
+
+.st-key-hb_answer { background: #fff; border: 1px solid #dce7e3; border-left: 3px solid #8cc7b5; border-radius: 10px; padding: 1.15rem 1.25rem; gap: .95rem; margin-top: .35rem; }
+.st-key-hb_answer h3 { font-size: 1rem; color: #29685e; }
+.st-key-hb_answer [data-testid="stMarkdownContainer"] { line-height: 1.7; }
+.st-key-hb_answer [data-testid="stExpander"] { background: #fafcfb; border-color: #e7edeb; }
+.st-key-hb_answer [data-testid="stExpander"] summary p { color: #5f7683; font-size: .8rem; }
+/* React JSON assigns syntax colors inline. Restrict this necessary override to
+   returned values so bright numeric/string colors stay readable on white. */
+.st-key-hb_dashboard [data-testid="stJson"] .variable-value [style*="color"] { color:#315f57 !important; }
+/* Popovers are rendered in a portal outside the dashboard container. */
+body:has(.st-key-hb_dashboard) [data-testid="stPopoverBody"] { color-scheme:light; background:#fff; color:#223b4a; border: 1px solid #dce7e6; border-radius: 10px; padding: .55rem .65rem; box-shadow: 0 8px 24px #284f4412; }
+body:has(.st-key-hb_dashboard) [data-testid="stPopoverBody"] [data-testid="stVerticalBlock"] { gap: .25rem; }
+body:has(.st-key-hb_dashboard) [data-testid="stPopoverBody"] [data-testid="stHorizontalBlock"] { gap: .4rem; align-items: center; flex-wrap: nowrap; border-bottom: 1px solid #f0f3f2; }
+body:has(.st-key-hb_dashboard) [data-testid="stPopoverBody"] [data-testid="stColumn"]:first-child { flex: 1 1 0; min-width: 0; }
+body:has(.st-key-hb_dashboard) [data-testid="stPopoverBody"] [data-testid="stColumn"]:last-child { flex: 0 0 34px; width: 34px; min-width: 34px; }
+body:has(.st-key-hb_dashboard) [class*="st-key-choose_saved_"] button { background:transparent; padding: .4rem .25rem; justify-content: flex-start; min-height: 2.15rem; border-radius: 6px; color: #344f5a; }
+body:has(.st-key-hb_dashboard) [class*="st-key-choose_saved_"] button p { font-size: .85rem; text-align: left; overflow-wrap: anywhere; white-space: normal; font-variant-numeric: tabular-nums; }
+body:has(.st-key-hb_dashboard) [class*="st-key-choose_saved_"] button > div { justify-content: flex-start; min-width: 0; }
+body:has(.st-key-hb_dashboard) [class*="st-key-choose_saved_"] button:hover { background: #f0f7f4; }
+body:has(.st-key-hb_dashboard) [data-testid="stPopoverBody"] button :is(p, span, [data-testid="stMarkdownContainer"]) { color:inherit; }
+body:has(.st-key-hb_dashboard) [class*="st-key-choose_saved_"] button:focus-visible { background:#f0f7f4; outline:2px solid #287d70; outline-offset:1px; }
+body:has(.st-key-hb_dashboard) [role="tooltip"] { background:#fff; color:#223b4a; border:1px solid #d7e5e1; }
+
+.st-key-hb_dashboard [data-testid="stPopover"] button > div { justify-content: space-between; }
+body:has(.st-key-hb_dashboard) [class*="st-key-delete_saved_"] button { width: 30px; min-height: 30px; padding: 0; border: 0; border-radius: 6px; color: #7e7277; background: transparent; }
+body:has(.st-key-hb_dashboard) [class*="st-key-delete_saved_"] button:hover { background: #f9eef0; color: #935266; }
+.st-key-hb_dashboard hr { margin: 0; border-color: #e2e9e7; }
+/* Scope the stacking rule to the outer results row, not its count columns. */
+@media (max-width: 1000px) {
+  .st-key-hb_overview_columns > [data-testid="stHorizontalBlock"],
+  .st-key-hb_overview_columns > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] { flex-direction: column; gap: 1rem; }
+  .st-key-hb_overview_columns > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"],
+  .st-key-hb_overview_columns > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] { width: 100%; flex: 1 1 100%; }
+}
+@media (max-width: 640px) {
+  [data-testid="stMainBlockContainer"]:has(.st-key-hb_dashboard) { padding: 0 1rem 1.5rem; }
+  .st-key-hb_dashboard { gap: 1.25rem; }
+  .st-key-hb_current, .st-key-hb_previous, .st-key-hb_ask { padding: 1rem; }
+  .st-key-hb_summary { padding: .95rem 1rem; }
+  .st-key-hb_composer .st-key-ask_healthbrief { width: 100%; }
+  .st-key-hb_answer { padding: .85rem; }
+  .st-key-hb_dashboard [data-testid="stFileUploaderDropzone"] { padding: .65rem; }
+  .st-key-hb_current_actions [data-testid="stHorizontalBlock"] { flex-wrap: nowrap; gap: .55rem; }
+  .st-key-hb_current_actions [data-testid="stColumn"] { min-width: 0; width: auto; flex: 1 1 0; }
+  .st-key-hb_current_actions [data-testid="stColumn"]:first-child { flex-grow: 1.4; }
+  .st-key-hb_current_actions [data-testid="stColumn"]:last-child { display: none; }
+  .st-key-hb_current_actions button { min-height: 3rem; padding: .4rem .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .st-key-hb_dashboard button { transition: none; }
+}

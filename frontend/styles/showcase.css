@@ -1,0 +1,62 @@
+:host { display: block; }
+* { box-sizing: border-box; }
+.showcase { container-type: inline-size; color: #263f49; font-family: "Source Sans 3", "Source Sans Pro", sans-serif; padding: 8px 0 24px; }
+.stage { position: relative; height: clamp(310px, 43cqw, 500px); isolation: isolate; }
+.stage::before {
+  content: ""; position: absolute; inset: -3% 0; z-index: -2;
+  pointer-events: none; border-radius: 46%;
+  background:
+    radial-gradient(ellipse at 53% 60%, #dcefe9d9 0%, #e8f6f0a6 43%, transparent 74%),
+    radial-gradient(ellipse at 90% 33%, #e3f3f3a6, transparent 62%);
+}
+.stage::after {
+  content: ""; position: absolute; right: 18%; top: 8%; width: 38%; height: 80%;
+  z-index: -1; pointer-events: none;
+  border-radius: 75% 25% 65% 35% / 55% 30% 70% 45%;
+  background: linear-gradient(140deg, #bee7e957, #beedc72e 70%, transparent);
+  transform: rotate(-12deg); opacity: .6;
+}
+.visual { position: absolute; margin: 0; overflow: hidden; border: 3px solid #fff; border-radius: 13px; box-shadow: 0 8px 24px #305a570c; transition: left 400ms ease-out, top 400ms ease-out, width 400ms ease-out, height 400ms ease-out, opacity 400ms ease-out; }
+.visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.product { left: 26%; top: .5%; width: 60%; height: 97%; z-index: 4; background: #fff; border-width: 4px; box-shadow: 0 14px 36px #214e4b1a, 0 3px 10px #214e4b0d; }
+.product-image { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.product img { object-fit: contain; }
+.doctor { left: 11%; top: 10%; width: 22%; height: 81%; z-index: 3; }
+.man { left: 0%; top: 24%; width: 17%; height: 64%; z-index: 2; }
+.stage[data-focus="0"] .man img { object-position: 95% 35%; }
+.woman { left: 80%; top: 19%; width: 20%; height: 72%; z-index: 2; }
+.stage[data-focus="1"] .product,
+.stage[data-focus="2"] .product,
+.stage[data-focus="3"] .product { left: 26%; top: .5%; width: 60%; height: 97%; z-index: 4; opacity: 1; }
+.stage[data-focus="1"] .doctor,
+.stage[data-focus="2"] .man,
+.stage[data-focus="3"] .woman { left: 7%; top: 6%; width: 25%; height: 87%; z-index: 3; opacity: 1; }
+.stage[data-focus="1"] .man,
+.stage[data-focus="2"] .doctor,
+.stage[data-focus="3"] .doctor { left: 8%; top: 18%; width: 21%; height: 72%; z-index: 2; opacity: .65; }
+.stage[data-focus="1"] .woman,
+.stage[data-focus="2"] .woman { left: 76%; top: 21%; width: 22%; height: 68%; opacity: .65; }
+.stage[data-focus="3"] .man { left: 82%; top: 26%; width: 17%; height: 60%; opacity: .45; }
+.controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 8px; }
+button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.arrow { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #dfe9e3; border-radius: 50%; background: #fff; color: #287d70; transition: background-color 300ms ease-out; }
+.arrow:hover { background: #edf6f2; }
+.arrow svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.dots { display: flex; gap: 0; }
+.dot { display: grid; place-items: center; width: 32px; height: 44px; border: 0; background: transparent; padding: 0; border-radius: 8px; }
+.dot::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #c4dcd3; transition: background-color 300ms ease-out; }
+.dot[aria-current="true"]::after { background: #287d70; }
+button:focus-visible { outline: 2px solid #287d70; outline-offset: 3px; }
+.caption { text-align: center; color: #62777c; margin: 7px 0 0; font-size: 14px; line-height: 1.6; }
+.preview-note { position: absolute; bottom: 8px; right: 8px; background: #fcfdfbf2; color: #496269; padding: 4px 8px; border-radius: 4px; font-size: 11px; }
+@container (max-width: 640px) {
+  .stage { height: clamp(290px, 85cqw, 400px); }
+  .stage .visual { left: 0%; top: 0%; width: 100%; height: 100%; opacity: 0; visibility: hidden; box-shadow: 0 7px 22px #305a5710; transition: opacity 400ms ease-out; }
+  .stage[data-focus="0"] .product { opacity: 1; visibility: visible; }
+  .stage[data-focus="1"] .doctor,
+  .stage[data-focus="2"] .man,
+  .stage[data-focus="3"] .woman { left: 12%; top: 0; width: 76%; height: 100%; opacity: 1; visibility: visible; }
+  .visual img { object-fit: contain; background: #edf5f2; }
+  .controls { margin-top: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .visual, .arrow, .dot::after { transition: none !important; } }
